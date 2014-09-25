@@ -11,7 +11,8 @@ import UIKit
 class SignupViewController: UIViewController, UITextFieldDelegate {
     let blurEffect : UIBlurEffect = UIBlurEffect(style: .Dark)
     let backgroundView : UIVisualEffectView
-    let foregroundContentView : UIVisualEffectView
+    
+    let foregroundContentView : UIView = UIView()
     let foregroundContentScrollView : UIScrollView = UIScrollView()
     
     let firstNameTextField : CNHFloatLabeledTextFieldView = CNHFloatLabeledTextFieldView(title: "First Name")
@@ -25,8 +26,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     override init() {
         backgroundView = UIVisualEffectView(effect: blurEffect)
-        foregroundContentView = UIVisualEffectView(effect: UIVibrancyEffect(forBlurEffect: blurEffect))
-
         textFields = [firstNameTextField, lastNameTextField, emailTextField, passwordTextField]
         
         super.init(nibName: nil, bundle: nil)
@@ -63,7 +62,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: signupButton)
         
         view.addSubview(backgroundView)
-        view.addSubview(foregroundContentScrollView)
+        backgroundView.contentView.addSubview(foregroundContentScrollView)
         
         foregroundContentScrollView.addSubview(foregroundContentView)
         
@@ -127,9 +126,9 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             
             if let topGuide = topLayoutGuide as? UIView {
                 make.top.equalTo()(topGuide.mas_bottom);
-                make.left.equalTo()(superview)
-                make.right.equalTo()(superview)
-                make.bottom.equalTo()(superview)
+                make.left.equalTo()(self.backgroundView)
+                make.right.equalTo()(self.backgroundView)
+                make.bottom.equalTo()(self.backgroundView)
             }
             
             return ()

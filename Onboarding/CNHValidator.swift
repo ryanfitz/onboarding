@@ -71,3 +71,31 @@ class PasswordValidator : Validator {
         
     }
 }
+
+class PhoneNumberValidator : Validator {
+    
+    var input: String?
+    
+    convenience init(input: String) {
+        self.init()
+        self.input = input
+    }
+    
+    func validate() -> (Bool, NSError?) {
+        if let phoneNumber : String = input {
+            
+            if(phoneNumber.isEmpty) {
+                return (true, nil)
+            } else if (countElements(phoneNumber) < 10) {
+                var err : NSError = NSError(domain: "com.clutchretail.cinch", code: 1, userInfo: [NSLocalizedDescriptionKey:"Phone number is not valid"])
+                return (false, err)
+            } else {
+                return (true, nil)
+            }
+        } else {
+            return (true, nil)
+        }
+        
+        
+    }
+}

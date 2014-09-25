@@ -15,6 +15,7 @@
 		C4E57D9E19CBAEC800F1C717 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4E57D9C19CBAEC800F1C717 /* LaunchScreen.xib */; };
 		C4E57DAA19CBAEC900F1C717 /* FadeExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E57DA919CBAEC900F1C717 /* FadeExampleTests.swift */; };
 		C4E57DBF19CD193F00F1C717 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E57DBE19CD193F00F1C717 /* SignupViewController.swift */; };
+		C4E8206B19D47B9600E97A00 /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8206A19D47B9600E97A00 /* VerifyPhoneViewController.swift */; };
 		F7EA5DE7BDAA40BA8B982857 /* libPods-Cinch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6349B4404D464C9C72DB22 /* libPods-Cinch.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		C4E57DBA19CC7C2500F1C717 /* libPods-FadeExample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-FadeExample.a"; path = "Pods/build/Debug-iphoneos/libPods-FadeExample.a"; sourceTree = "<group>"; };
 		C4E57DBC19CC7C9800F1C717 /* libPods-FadeExample-Masonry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-FadeExample-Masonry.a"; path = "Pods/build/Debug-iphoneos/libPods-FadeExample-Masonry.a"; sourceTree = "<group>"; };
 		C4E57DBE19CD193F00F1C717 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		C4E8206A19D47B9600E97A00 /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyPhoneViewController.swift; sourceTree = "<group>"; };
 		DE6349B4404D464C9C72DB22 /* libPods-Cinch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cinch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6626F6FEEA4C2DBEEF2467 /* Pods-Cinch.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinch.xcconfig"; path = "Pods/Pods-Cinch.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 				C4E57DB319CC752A00F1C717 /* Onboarding-Bridging-Header.h */,
 				C4E57D9519CBAEC800F1C717 /* RootViewController.swift */,
 				C4E57DBE19CD193F00F1C717 /* SignupViewController.swift */,
+				C4E8206A19D47B9600E97A00 /* VerifyPhoneViewController.swift */,
 				C4E57D9A19CBAEC800F1C717 /* Images.xcassets */,
 				C4E57D9C19CBAEC800F1C717 /* LaunchScreen.xib */,
 				C4E57D9119CBAEC800F1C717 /* Supporting Files */,
@@ -287,6 +290,7 @@
 				C400AC2E19CF4C8B00A700F3 /* CNHFloatLabeledTextFieldView.swift in Sources */,
 				C4E57D9619CBAEC800F1C717 /* RootViewController.swift in Sources */,
 				C44BC08219D08DB4004919EE /* CNHValidator.swift in Sources */,
+				C4E8206B19D47B9600E97A00 /* VerifyPhoneViewController.swift in Sources */,
 				C4E57D9419CBAEC800F1C717 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

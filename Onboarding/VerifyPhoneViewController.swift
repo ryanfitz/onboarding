@@ -1,36 +1,39 @@
 //
-//  SignupViewController.swift
-//  FadeExample
+//  VerifyPhoneViewController.swift
+//  Cinch
 //
-//  Created by Ryan Fitzgerald on 9/19/14.
+//  Created by Ryan Fitzgerald on 9/25/14.
 //  Copyright (c) 2014 rebase. All rights reserved.
 //
 
 import UIKit
 
-class SignupViewController: UIViewController, UITextFieldDelegate {
+class VerifyPhoneViewController: UIViewController, UITextFieldDelegate {
     let blurEffect : UIBlurEffect = UIBlurEffect(style: .Dark)
     let backgroundView : UIVisualEffectView
     
     let foregroundContentView : UIView = UIView()
     let foregroundContentScrollView : UIScrollView = UIScrollView()
     
-    let firstNameTextField : CNHFloatLabeledTextFieldView = CNHFloatLabeledTextFieldView(title: "First Name")
-    let lastNameTextField : CNHFloatLabeledTextFieldView = CNHFloatLabeledTextFieldView(title: "Last Name")
-    let emailTextField : CNHFloatLabeledTextFieldView = CNHFloatLabeledTextFieldView(title: "Email")
-    let passwordTextField : CNHFloatLabeledTextFieldView = CNHFloatLabeledTextFieldView(title: "Password")
-    let textFields : [CNHFloatLabeledTextFieldView]
+    let countryCodeTextField : CNHFloatLabeledTextFieldView = CNHFloatLabeledTextFieldView(title: "Country Code")
+    let phoneNumberTextField : CNHFloatLabeledTextFieldView = CNHFloatLabeledTextFieldView(title: "Mobile Number")
+    let authCodeTextField : CNHFloatLabeledTextFieldView = CNHFloatLabeledTextFieldView(title: "Cinch Code")
 
-    let signupButton : UIButton = UIButton.buttonWithType(.Custom) as UIButton
-    let termsLabel : UILabel = UILabel()
+    let textFields : [CNHFloatLabeledTextFieldView]
+    
+    let verifyButton : UIButton = UIButton.buttonWithType(.Custom) as UIButton
+    let verifyLabel : UILabel = UILabel()
+    let privacyLabel : UILabel = UILabel()
+    
+    var autoCodeHeightConstraint : MASConstraint?
     
     override init() {
         backgroundView = UIVisualEffectView(effect: blurEffect)
-        textFields = [firstNameTextField, lastNameTextField, emailTextField, passwordTextField]
+        textFields = [countryCodeTextField, phoneNumberTextField, authCodeTextField]
         
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -38,71 +41,74 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Sign Up"
+        title = "Verify Phone #"
         if let navigationBar = self.navigationController?.navigationBar {
             navigationBar.translucent = true
             navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
             navigationBar.shadowImage = UIImage()
-//            navigationBar.shadowImage = self.imageWithColor(UIColor.darkGrayColor())
+            //            navigationBar.shadowImage = self.imageWithColor(UIColor.darkGrayColor())
             navigationBar.tintColor = UIColor.whiteColor()
             navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         }
-    
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
-
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: Selector("tappedClose:"))
         
-        signupButton.backgroundColor = UIColor(red: 19/255, green: 173/255, blue: 163/255, alpha: 1)
-        signupButton.setTitle("Create", forState: .Normal)
-        signupButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        signupButton.setTitleColor(UIColor.grayColor(), forState: .Highlighted)
-        signupButton.titleLabel?.font = UIFont.systemFontOfSize(14)
-        signupButton.layer.cornerRadius = 4
-        signupButton.contentEdgeInsets = UIEdgeInsetsMake(7, 8 , 7, 8)
-        signupButton.sizeToFit()
-        signupButton.addTarget(self, action: Selector("didTapSignup"), forControlEvents: UIControlEvents.TouchUpInside)
-
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: Selector("tappedClose:"))
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: signupButton)
+        verifyButton.backgroundColor = UIColor(red: 19/255, green: 173/255, blue: 163/255, alpha: 1)
+        verifyButton.setTitle("Verify", forState: .Normal)
+        verifyButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        verifyButton.setTitleColor(UIColor.grayColor(), forState: .Highlighted)
+        verifyButton.titleLabel?.font = UIFont.systemFontOfSize(14)
+        verifyButton.layer.cornerRadius = 4
+        verifyButton.contentEdgeInsets = UIEdgeInsetsMake(7, 8 , 7, 8)
+        verifyButton.sizeToFit()
+        verifyButton.addTarget(self, action: Selector("didTapVerify"), forControlEvents: UIControlEvents.TouchUpInside)
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: verifyButton)
         
         view.addSubview(backgroundView)
         backgroundView.contentView.addSubview(foregroundContentScrollView)
         
         foregroundContentScrollView.addSubview(foregroundContentView)
         
-        emailTextField.labeledTextField.keyboardType = .EmailAddress
-        emailTextField.labeledTextField.autocapitalizationType = .None
-        passwordTextField.labeledTextField.secureTextEntry = true
-        passwordTextField.labeledTextField.returnKeyType = .Go
-
+        countryCodeTextField.labeledTextField.text = "US - United States"
+        phoneNumberTextField.labeledTextField.keyboardType = .NumberPad
+        authCodeTextField.labeledTextField.keyboardType = .NumberPad
+        authCodeTextField.alpha = 0
+        
         for view in textFields {
             view.labeledTextField.delegate = self
             foregroundContentView.addSubview(view)
         }
         
-        let termsText : String = "Terms of Use"
+        verifyLabel.numberOfLines = 0
+        verifyLabel.lineBreakMode = .ByWordWrapping
+        verifyLabel.font = UIFont.systemFontOfSize(12)
+        verifyLabel.textAlignment = .Center
+        verifyLabel.textColor = UIColor.whiteColor()
+        verifyLabel.text = "Please verify your phone number so we know\nyou're a real person!"
+        foregroundContentView.addSubview(verifyLabel)
+        
         let privacyText : String = "Privacy Policy"
-        let termsAndPrivacyText : NSString = "By creating an account, you agree to Cinch's \(termsText) and \(privacyText)."
-    
+        let privacyStatementText : NSString = "We will not share your phone number to other users.\nRead our \(privacyText) to learn more."
+        
         var attribs : [NSObject : AnyObject] = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName : UIFont.systemFontOfSize(11)]
-        var attributedText : NSMutableAttributedString = NSMutableAttributedString(string: termsAndPrivacyText, attributes: attribs)
+        var attributedText : NSMutableAttributedString = NSMutableAttributedString(string: privacyStatementText, attributes: attribs)
         var highlightAttribs : [NSObject : AnyObject] = [NSForegroundColorAttributeName : UIColor(red: 19/255, green: 173/255, blue: 163/255, alpha: 1)]
         
-        attributedText.setAttributes(highlightAttribs, range: termsAndPrivacyText.rangeOfString(termsText, options: .LiteralSearch))
-        attributedText.setAttributes(highlightAttribs, range: termsAndPrivacyText.rangeOfString(privacyText, options: .LiteralSearch))
-
-        termsLabel.attributedText = attributedText
-        termsLabel.numberOfLines = 0
-        termsLabel.lineBreakMode = .ByWordWrapping
-        termsLabel.font = UIFont.systemFontOfSize(11)
-        foregroundContentView.addSubview(termsLabel)
+        attributedText.setAttributes(highlightAttribs, range: privacyStatementText.rangeOfString(privacyText, options: .LiteralSearch))
+        
+        privacyLabel.attributedText = attributedText
+        privacyLabel.numberOfLines = 0
+        privacyLabel.lineBreakMode = .ByWordWrapping
+        privacyLabel.font = UIFont.systemFontOfSize(11)
+        foregroundContentView.addSubview(privacyLabel)
         
         self.layoutSubviews()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardDidShow:"), name: UIKeyboardDidShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillBeHide:"), name: UIKeyboardWillHideNotification, object: nil)
         
-        firstNameTextField.becomeFirstResponder()
+        phoneNumberTextField.becomeFirstResponder()
     }
     
     deinit {
@@ -111,7 +117,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        firstNameTextField.becomeFirstResponder()
     }
     
     func layoutSubviews() {
@@ -147,38 +152,29 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     func generateTextFieldConstraints() {
-
-        firstNameTextField.mas_makeConstraints { (make) in
-            make.top.equalTo()(0)
-            make.top.equalTo()(self.lastNameTextField.mas_top)
-            make.left.equalTo()(0)
-            make.right.equalTo()(self.lastNameTextField.mas_left).offset()(-10)
-            make.width.equalTo()(self.lastNameTextField.mas_width)
-            make.height.equalTo()(self.lastNameTextField.mas_height)
-            make.height.greaterThanOrEqualTo()(44)
-
-            return ()
-        }
         
-        lastNameTextField.mas_makeConstraints { (make) in
-            make.top.equalTo()(self.firstNameTextField.mas_top)
-            make.right.equalTo()(0)
-            make.left.equalTo()(self.firstNameTextField.mas_right).offset()(10)
-            make.width.equalTo()(self.firstNameTextField.mas_width)
-            make.height.equalTo()(self.firstNameTextField.mas_height)
-            make.height.greaterThanOrEqualTo()(44)
+        verifyLabel.mas_makeConstraints { (make) -> Void in
+            make.top.equalTo()(self.foregroundContentView.mas_top)
+            make.left.equalTo()(0)
+            make.width.equalTo()(self.foregroundContentView.mas_width)
             
             return ()
         }
-
-        var lastView : UIView = lastNameTextField
         
-        for view in [emailTextField, passwordTextField] {
+        var lastView : UIView = verifyLabel
+        
+        for (index, view) in enumerate(textFields) {
             view.mas_makeConstraints { (make) -> Void in
-                make.top.equalTo()(lastView.mas_bottom).offset()(8)
+                let offset : CGFloat = index == 0 ? 16 : 8
+                make.top.equalTo()(lastView.mas_bottom).offset()(offset)
                 make.left.equalTo()(0)
                 make.width.equalTo()(self.foregroundContentView.mas_width)
-                make.height.greaterThanOrEqualTo()(44)
+                
+                if(view == self.authCodeTextField) {
+                    self.autoCodeHeightConstraint = make.height.equalTo()(0)
+                } else {
+                    make.height.greaterThanOrEqualTo()(44)
+                }
                 
                 return ()
             }
@@ -186,8 +182,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             lastView = view
         }
         
-        termsLabel.mas_makeConstraints { (make) -> Void in
-            make.top.equalTo()(lastView.mas_bottom).offset()(10)
+        privacyLabel.mas_makeConstraints { (make) -> Void in
+            make.top.equalTo()(lastView.mas_bottom).offset()(8)
             make.left.equalTo()(0)
             make.width.equalTo()(self.foregroundContentView.mas_width)
             
@@ -195,13 +191,13 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         }
         
         foregroundContentView.mas_makeConstraints { (make) -> Void in
-            make.bottom.equalTo()(self.termsLabel.mas_bottom)
+            make.bottom.equalTo()(self.privacyLabel.mas_bottom)
             return ()
         }
     }
     
     func updateTextFieldConstraints() {
-        for view in textFields {
+        for view in [phoneNumberTextField] {
             var height : CGFloat = 44
             
             if(view.state == CNHTextFieldControlState.Error) {
@@ -214,9 +210,9 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-        UIView.animateWithDuration(0.25, animations: {
-            self.view.layoutIfNeeded()
-        })
+//        UIView.animateWithDuration(0.25, animations: {
+//            self.view.layoutIfNeeded()
+//        })
     }
     
     func tappedClose (sender : AnyObject) {
@@ -230,10 +226,10 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         var context : CGContextRef = UIGraphicsGetCurrentContext()
         CGContextSetFillColorWithColor(context, color.CGColor);
         CGContextFillRect(context, rect);
-    
+        
         var image: UIImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-    
+        
         return image;
     }
     
@@ -252,6 +248,10 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: UITextFieldDelegate
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        return textField != countryCodeTextField.labeledTextField
+    }
+    
     func textFieldDidBeginEditing(textField: UITextField) {
         for view in textFields {
             if(view.labeledTextField == textField) {
@@ -261,29 +261,21 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-//        self.updateTextFieldConstraints()
+        //        self.updateTextFieldConstraints()
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        if(textField == emailTextField.labeledTextField) {
-            var validator : Validator = EmailValidator(input: textField.text)
-            let (valid, err) = validator.validate()
-            if(!valid) {
-                emailTextField.state = .Error
-                emailTextField.errorMessageLabel.text = err?.localizedDescription
-            } else {
-                emailTextField.state = .Normal
-                emailTextField.errorMessageLabel.text = ""
-            }
+        if(textField == phoneNumberTextField.labeledTextField) {
+            self.validatePhoneNumberField()
         }
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(Float(NSEC_PER_SEC) * 0)), dispatch_get_main_queue(), {
-            self.updateTextFieldConstraints()
-        })
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(Float(NSEC_PER_SEC) * 0)), dispatch_get_main_queue(), {
+//            self.updateTextFieldConstraints()
+//        })
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-
+        
         for (index, view) in enumerate(textFields) {
             if (view.labeledTextField == textField && (textFields.count > index + 1)) {
                 
@@ -296,9 +288,49 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    func validatePhoneNumberField () {
+        var validator : Validator = PhoneNumberValidator(input: phoneNumberTextField.labeledTextField.text)
+        let (valid, err) = validator.validate()
+        if(!valid) {
+            phoneNumberTextField.state = .Error
+            phoneNumberTextField.errorMessageLabel.text = err?.localizedDescription
+        } else {
+            phoneNumberTextField.state = .Normal
+            phoneNumberTextField.errorMessageLabel.text = ""
+        }
+    }
+    
+    func displayAuthCodeField () {
+        if let constraint = self.autoCodeHeightConstraint? {
+            constraint.uninstall()
+            
+            self.autoCodeHeightConstraint = nil
+            
+            self.authCodeTextField.mas_makeConstraints { (make) -> Void in
+                make.height.greaterThanOrEqualTo()(44)
+                return ()
+            }
+            
+            UIView.animateWithDuration(0.25,
+                delay : 0,
+                options: .CurveEaseOut,
+                animations: {
+                    self.authCodeTextField.alpha = 1
+                    self.view.layoutIfNeeded()
+                }, completion: { (value: Bool) in
+                    self.authCodeTextField.becomeFirstResponder()
+                    return ()
+            })
+        }
+    }
+    
     // MARK: Actions
-    func didTapSignup() {
-        var vc : VerifyPhoneViewController = VerifyPhoneViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+    func didTapVerify() {
+        self.validatePhoneNumberField()
+        self.updateTextFieldConstraints()
+        
+        if(phoneNumberTextField.state != .Error) {
+            self.displayAuthCodeField()
+        }
     }
 }

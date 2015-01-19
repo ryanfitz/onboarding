@@ -6,5 +6,5 @@ target "Cinch" do
   pod 'Masonry', '~> 0.5'
   pod 'JVFloatLabeledTextField', '~> 0.0.9'
   pod 'SwipeView', '~> 1.3.2'
-  pod 'FXPageControl', '~> 1.3.2'
+  pod 'FXPageControl', '~> 1.4'
 end

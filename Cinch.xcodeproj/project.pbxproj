@@ -31,7 +31,7 @@
 
 /* Begin PBXFileReference section */
 		19B70FBE0E50450583C10AC0 /* libPods-FadeExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FadeExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE2DF62E84334C2DAA11F409 /* Pods-FadeExample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FadeExample.xcconfig"; path = "Pods/Pods-FadeExample.xcconfig"; sourceTree = "<group>"; };
+		32CA3EC1A3085B81612084BF /* Pods-Cinch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cinch/Pods-Cinch.debug.xcconfig"; sourceTree = "<group>"; };
 		C400AC2D19CF4C8B00A700F3 /* CNHFloatLabeledTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHFloatLabeledTextFieldView.swift; sourceTree = "<group>"; };
 		C44BC08119D08DB4004919EE /* CNHValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHValidator.swift; sourceTree = "<group>"; };
 		C4E57D8E19CBAEC800F1C717 /* Cinch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,7 +52,7 @@
 		C4E57DBE19CD193F00F1C717 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		C4E8206A19D47B9600E97A00 /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyPhoneViewController.swift; sourceTree = "<group>"; };
 		DE6349B4404D464C9C72DB22 /* libPods-Cinch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cinch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA6626F6FEEA4C2DBEEF2467 /* Pods-Cinch.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinch.xcconfig"; path = "Pods/Pods-Cinch.xcconfig"; sourceTree = "<group>"; };
+		F9E1B163DDE6B8D65C6DDEA1 /* Pods-Cinch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cinch/Pods-Cinch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +88,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8CF9C758134E5F1F56B17911 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32CA3EC1A3085B81612084BF /* Pods-Cinch.debug.xcconfig */,
+				F9E1B163DDE6B8D65C6DDEA1 /* Pods-Cinch.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C4E57D8519CBAEC800F1C717 = {
 			isa = PBXGroup;
 			children = (
@@ -95,8 +104,7 @@
 				C4E57DA619CBAEC900F1C717 /* OnboardingTests */,
 				C4E57D8F19CBAEC800F1C717 /* Products */,
 				3FC9B1C34735497F978AA9EC /* Frameworks */,
-				EA6626F6FEEA4C2DBEEF2467 /* Pods-Cinch.xcconfig */,
-				AE2DF62E84334C2DAA11F409 /* Pods-FadeExample.xcconfig */,
+				8CF9C758134E5F1F56B17911 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -261,7 +269,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Cinch-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cinch/Pods-Cinch-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D04C63A0FBE849648E6CBD98 /* Check Pods Manifest.lock */ = {
@@ -406,7 +414,7 @@
 		};
 		C4E57DAE19CBAEC900F1C717 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA6626F6FEEA4C2DBEEF2467 /* Pods-Cinch.xcconfig */;
+			baseConfigurationReference = 32CA3EC1A3085B81612084BF /* Pods-Cinch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/Onboarding/Info.plist";
@@ -422,7 +430,7 @@
 		};
 		C4E57DAF19CBAEC900F1C717 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA6626F6FEEA4C2DBEEF2467 /* Pods-Cinch.xcconfig */;
+			baseConfigurationReference = F9E1B163DDE6B8D65C6DDEA1 /* Pods-Cinch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/Onboarding/Info.plist";

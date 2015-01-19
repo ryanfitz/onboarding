@@ -88,6 +88,7 @@ class IntroViewController: UIViewController, SwipeViewDataSource, SwipeViewDeleg
         loginButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         loginButton.setTitleColor(UIColor.grayColor(), forState: .Highlighted)
         loginButton.titleLabel?.font = UIFont(name: "Helvetica", size: 14)
+        loginButton.addTarget(self, action: Selector("didTapLogin"), forControlEvents: UIControlEvents.TouchUpInside)
         view.addSubview(loginButton)
         
         separator.backgroundColor = UIColor.blackColor()
@@ -180,6 +181,10 @@ class IntroViewController: UIViewController, SwipeViewDataSource, SwipeViewDeleg
         SignupWireFrame.presentSignupInterfaceFrom(self)
     }
 
+    func didTapLogin() {
+        LoginWireFrame.presentSignupInterfaceFrom(self)
+    }
+    
     // MARK: SwipeViewDataSource
     
     func numberOfItemsInSwipeView(swipeView: SwipeView!) -> Int {

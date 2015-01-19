@@ -18,11 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         if let win = window {
-//            win.backgroundColor = UIColor.whiteColor()
             win.makeKeyAndVisible()
-            
-            let vc : UIViewController = IntroViewController()
-            win.rootViewController = vc
+            IntroWireFrame.presentIntroInterfaceFromWindow(win)
         }
         
         return true

@@ -117,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				C49F287F1A6DAD26007B2B1A /* SignupViewController.swift */,
+				C4E8206A19D47B9600E97A00 /* VerifyPhoneViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -144,6 +145,15 @@
 				C49F28861A6DADDF007B2B1A /* CNHValidator.swift */,
 			);
 			path = validators;
+			sourceTree = "<group>";
+		};
+		C49F28881A6DAE60007B2B1A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C4E57D9A19CBAEC800F1C717 /* Images.xcassets */,
+				C4E57D9C19CBAEC800F1C717 /* LaunchScreen.xib */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		C4E57D8519CBAEC800F1C717 = {
@@ -174,9 +184,7 @@
 				C4E57D9319CBAEC800F1C717 /* AppDelegate.swift */,
 				C4E57DB319CC752A00F1C717 /* Onboarding-Bridging-Header.h */,
 				C4E57D9519CBAEC800F1C717 /* RootViewController.swift */,
-				C4E8206A19D47B9600E97A00 /* VerifyPhoneViewController.swift */,
-				C4E57D9A19CBAEC800F1C717 /* Images.xcassets */,
-				C4E57D9C19CBAEC800F1C717 /* LaunchScreen.xib */,
+				C49F28881A6DAE60007B2B1A /* Resources */,
 				C4E57D9119CBAEC800F1C717 /* Supporting Files */,
 			);
 			path = Onboarding;

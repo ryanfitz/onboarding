@@ -47,6 +47,7 @@ class CNHFloatLabeledTextFieldView: UIView {
             NSFontAttributeName : UIFont.systemFontOfSize(16)]
         )
         
+        labeledTextField.setPlaceholder(title, floatingTitle: title)
         labeledTextField.textColor = UIColor.whiteColor()
         labeledTextField.font = UIFont.systemFontOfSize(16)
         labeledTextField.floatingLabel.font = UIFont.boldSystemFontOfSize(11)

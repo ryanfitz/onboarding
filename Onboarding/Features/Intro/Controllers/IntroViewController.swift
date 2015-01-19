@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController, SwipeViewDataSource, SwipeViewDelegate {
+class IntroViewController: UIViewController, SwipeViewDataSource, SwipeViewDelegate {
 
     let signupButton : UIButton = UIButton.buttonWithType(.Custom) as UIButton
     let loginButton : UIButton = UIButton.buttonWithType(.Custom) as UIButton

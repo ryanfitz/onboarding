@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            win.backgroundColor = UIColor.whiteColor()
             win.makeKeyAndVisible()
             
-            let vc : UIViewController = RootViewController()
+            let vc : UIViewController = IntroViewController()
             win.rootViewController = vc
         }
         

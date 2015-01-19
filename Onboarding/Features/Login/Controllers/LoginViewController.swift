@@ -69,6 +69,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         emailTextField.labeledTextField.keyboardType = .EmailAddress
         emailTextField.labeledTextField.autocapitalizationType = .None
+        emailTextField.labeledTextField.autocorrectionType = .No
         passwordTextField.labeledTextField.secureTextEntry = true
         passwordTextField.labeledTextField.returnKeyType = .Go
 

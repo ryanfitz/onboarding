@@ -47,12 +47,13 @@ class CNHFloatLabeledTextFieldView: UIView {
         labeledTextField.font = UIFont.systemFontOfSize(16)
         labeledTextField.floatingLabel.font = UIFont.boldSystemFontOfSize(11)
         labeledTextField.floatingLabelTextColor = UIColor(red: 114/255, green: 114/255, blue: 114/255, alpha: 1)
+        labeledTextField.floatingLabelActiveTextColor = UIColor(red: 19/255, green: 173/255, blue: 163/255, alpha: 1)
         labeledTextField.clearButtonMode = .WhileEditing
         labeledTextField.keyboardAppearance = .Dark;
         labeledTextField.tintColor = UIColor(red: 19/255, green: 173/255, blue: 163/255, alpha: 1)
         labeledTextField.autocapitalizationType = .Words
         labeledTextField.returnKeyType = .Next
-        labeledTextField.floatingLabelYPadding = -2
+//        labeledTextField.floatingLabelYPadding = -10
         
         border.backgroundColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 0.5)
         

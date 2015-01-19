@@ -21,8 +21,8 @@
 // Masonry
 #define COCOAPODS_POD_AVAILABLE_Masonry
 #define COCOAPODS_VERSION_MAJOR_Masonry 0
-#define COCOAPODS_VERSION_MINOR_Masonry 5
-#define COCOAPODS_VERSION_PATCH_Masonry 3
+#define COCOAPODS_VERSION_MINOR_Masonry 6
+#define COCOAPODS_VERSION_PATCH_Masonry 0
 
 // SwipeView
 #define COCOAPODS_POD_AVAILABLE_SwipeView

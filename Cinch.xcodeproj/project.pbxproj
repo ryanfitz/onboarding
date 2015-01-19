@@ -13,6 +13,7 @@
 		C49F288A1A6DAF62007B2B1A /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F28891A6DAF62007B2B1A /* VerifyPhoneViewController.swift */; };
 		C49F288E1A6DB00F007B2B1A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F288D1A6DB00F007B2B1A /* IntroViewController.swift */; };
 		C49F28911A6DB2E8007B2B1A /* IntroWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F28901A6DB2E8007B2B1A /* IntroWireFrame.swift */; };
+		C49F28941A6DB5C3007B2B1A /* SignupWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F28931A6DB5C3007B2B1A /* SignupWireFrame.swift */; };
 		C4E57D9419CBAEC800F1C717 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E57D9319CBAEC800F1C717 /* AppDelegate.swift */; };
 		C4E57D9B19CBAEC800F1C717 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4E57D9A19CBAEC800F1C717 /* Images.xcassets */; };
 		C4E57D9E19CBAEC800F1C717 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4E57D9C19CBAEC800F1C717 /* LaunchScreen.xib */; };
@@ -39,6 +40,7 @@
 		C49F28891A6DAF62007B2B1A /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerifyPhoneViewController.swift; path = Features/Signup/Controllers/VerifyPhoneViewController.swift; sourceTree = "<group>"; };
 		C49F288D1A6DB00F007B2B1A /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		C49F28901A6DB2E8007B2B1A /* IntroWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroWireFrame.swift; sourceTree = "<group>"; };
+		C49F28931A6DB5C3007B2B1A /* SignupWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupWireFrame.swift; sourceTree = "<group>"; };
 		C4E57D8E19CBAEC800F1C717 /* Cinch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E57D9219CBAEC800F1C717 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4E57D9319CBAEC800F1C717 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				C49F287E1A6DACAC007B2B1A /* Controllers */,
+				C49F28921A6DB580007B2B1A /* WireFrame */,
 			);
 			name = Signup;
 			sourceTree = "<group>";
@@ -183,6 +186,15 @@
 				C49F28901A6DB2E8007B2B1A /* IntroWireFrame.swift */,
 			);
 			path = WireFrame;
+			sourceTree = "<group>";
+		};
+		C49F28921A6DB580007B2B1A /* WireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				C49F28931A6DB5C3007B2B1A /* SignupWireFrame.swift */,
+			);
+			name = WireFrame;
+			path = Features/Signup/WireFrame;
 			sourceTree = "<group>";
 		};
 		C4E57D8519CBAEC800F1C717 = {
@@ -378,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C49F28941A6DB5C3007B2B1A /* SignupWireFrame.swift in Sources */,
 				C49F28871A6DADDF007B2B1A /* CNHValidator.swift in Sources */,
 				C49F28801A6DAD26007B2B1A /* SignupViewController.swift in Sources */,
 				C49F28911A6DB2E8007B2B1A /* IntroWireFrame.swift in Sources */,

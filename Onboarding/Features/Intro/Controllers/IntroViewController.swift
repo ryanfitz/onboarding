@@ -177,13 +177,7 @@ class IntroViewController: UIViewController, SwipeViewDataSource, SwipeViewDeleg
     }
     
     func didTapSignup() {
-        var vc : SignupViewController = SignupViewController()
-
-        var nav : UINavigationController = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .OverCurrentContext
-        nav.modalTransitionStyle = .CoverVertical
-        
-        self.presentViewController(nav, animated: true, completion: nil)
+        SignupWireFrame.presentSignupInterfaceFrom(self)
     }
 
     // MARK: SwipeViewDataSource

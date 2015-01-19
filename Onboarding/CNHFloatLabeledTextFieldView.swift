@@ -58,6 +58,7 @@ class CNHFloatLabeledTextFieldView: UIView {
         labeledTextField.tintColor = UIColor(red: 19/255, green: 173/255, blue: 163/255, alpha: 1)
         labeledTextField.autocapitalizationType = .Words
         labeledTextField.returnKeyType = .Next
+        labeledTextField.contentVerticalAlignment = .Bottom
 //        labeledTextField.placeholderYPadding = -30
 //        labeledTextField.floatingLabelYPadding = -12
         
@@ -96,7 +97,7 @@ class CNHFloatLabeledTextFieldView: UIView {
         }
         
         border.mas_makeConstraints { (make) -> Void in
-            make.top.greaterThanOrEqualTo()(self.labeledTextField.mas_bottom).with().offset()(4)
+            make.top.greaterThanOrEqualTo()(self.labeledTextField.mas_bottom).with().offset()(8)
             make.left.equalTo()(superview)
             make.right.equalTo()(superview)
             make.width.equalTo()(superview)

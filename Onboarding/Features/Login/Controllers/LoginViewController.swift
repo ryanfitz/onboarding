@@ -273,6 +273,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
+        if(textField == passwordTextField.labeledTextField) {
+            println("attempt login")
+        }
+        
         return false
     }
     

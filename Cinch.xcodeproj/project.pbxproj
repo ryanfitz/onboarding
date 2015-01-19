@@ -11,8 +11,8 @@
 		C49F28841A6DAD9F007B2B1A /* CNHFloatLabeledTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F28831A6DAD9F007B2B1A /* CNHFloatLabeledTextFieldView.swift */; };
 		C49F28871A6DADDF007B2B1A /* CNHValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F28861A6DADDF007B2B1A /* CNHValidator.swift */; };
 		C49F288A1A6DAF62007B2B1A /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F28891A6DAF62007B2B1A /* VerifyPhoneViewController.swift */; };
+		C49F288E1A6DB00F007B2B1A /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F288D1A6DB00F007B2B1A /* RootViewController.swift */; };
 		C4E57D9419CBAEC800F1C717 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E57D9319CBAEC800F1C717 /* AppDelegate.swift */; };
-		C4E57D9619CBAEC800F1C717 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E57D9519CBAEC800F1C717 /* RootViewController.swift */; };
 		C4E57D9B19CBAEC800F1C717 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4E57D9A19CBAEC800F1C717 /* Images.xcassets */; };
 		C4E57D9E19CBAEC800F1C717 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4E57D9C19CBAEC800F1C717 /* LaunchScreen.xib */; };
 		C4E57DAA19CBAEC900F1C717 /* FadeExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E57DA919CBAEC900F1C717 /* FadeExampleTests.swift */; };
@@ -36,10 +36,10 @@
 		C49F28831A6DAD9F007B2B1A /* CNHFloatLabeledTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHFloatLabeledTextFieldView.swift; sourceTree = "<group>"; };
 		C49F28861A6DADDF007B2B1A /* CNHValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHValidator.swift; sourceTree = "<group>"; };
 		C49F28891A6DAF62007B2B1A /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerifyPhoneViewController.swift; path = Features/Signup/Controllers/VerifyPhoneViewController.swift; sourceTree = "<group>"; };
+		C49F288D1A6DB00F007B2B1A /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		C4E57D8E19CBAEC800F1C717 /* Cinch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E57D9219CBAEC800F1C717 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4E57D9319CBAEC800F1C717 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C4E57D9519CBAEC800F1C717 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		C4E57D9A19CBAEC800F1C717 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C4E57D9D19CBAEC800F1C717 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C4E57DA319CBAEC800F1C717 /* CinchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +100,7 @@
 		C49F287C1A6DAC98007B2B1A /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				C49F288B1A6DB00F007B2B1A /* Intro */,
 				C49F287D1A6DACA0007B2B1A /* Signup */,
 			);
 			name = Features;
@@ -156,6 +157,23 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		C49F288B1A6DB00F007B2B1A /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				C49F288C1A6DB00F007B2B1A /* Controllers */,
+			);
+			name = Intro;
+			path = Features/Intro;
+			sourceTree = "<group>";
+		};
+		C49F288C1A6DB00F007B2B1A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C49F288D1A6DB00F007B2B1A /* RootViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		C4E57D8519CBAEC800F1C717 = {
 			isa = PBXGroup;
 			children = (
@@ -183,7 +201,6 @@
 				C49F287C1A6DAC98007B2B1A /* Features */,
 				C4E57D9319CBAEC800F1C717 /* AppDelegate.swift */,
 				C4E57DB319CC752A00F1C717 /* Onboarding-Bridging-Header.h */,
-				C4E57D9519CBAEC800F1C717 /* RootViewController.swift */,
 				C49F28881A6DAE60007B2B1A /* Resources */,
 				C4E57D9119CBAEC800F1C717 /* Supporting Files */,
 			);
@@ -352,8 +369,8 @@
 			files = (
 				C49F28871A6DADDF007B2B1A /* CNHValidator.swift in Sources */,
 				C49F28801A6DAD26007B2B1A /* SignupViewController.swift in Sources */,
+				C49F288E1A6DB00F007B2B1A /* RootViewController.swift in Sources */,
 				C49F28841A6DAD9F007B2B1A /* CNHFloatLabeledTextFieldView.swift in Sources */,
-				C4E57D9619CBAEC800F1C717 /* RootViewController.swift in Sources */,
 				C49F288A1A6DAF62007B2B1A /* VerifyPhoneViewController.swift in Sources */,
 				C4E57D9419CBAEC800F1C717 /* AppDelegate.swift in Sources */,
 			);

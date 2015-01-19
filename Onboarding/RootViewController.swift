@@ -29,10 +29,10 @@ class RootViewController: UIViewController, SwipeViewDataSource, SwipeViewDelega
     var currentScrollOffset : CGFloat?
     
     let introImages : [UIImage] = [
-        UIImage(named: "intro-bg-1"),
-        UIImage(named: "intro-bg-2"),
-        UIImage(named: "intro-bg-3"),
-        UIImage(named: "intro-bg-4")
+        UIImage(named: "intro-bg-1")!,
+        UIImage(named: "intro-bg-2")!,
+        UIImage(named: "intro-bg-3")!,
+        UIImage(named: "intro-bg-4")!
     ]
     
     let currentImageView = UIImageView()

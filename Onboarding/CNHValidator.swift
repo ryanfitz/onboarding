@@ -29,7 +29,7 @@ class EmailValidator : Validator {
             }
             
             let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-            let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+            let emailTest : NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)!
             
             if emailTest.evaluateWithObject(email) {
                 return (true, nil)

@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C400AC2E19CF4C8B00A700F3 /* CNHFloatLabeledTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C400AC2D19CF4C8B00A700F3 /* CNHFloatLabeledTextFieldView.swift */; };
-		C44BC08219D08DB4004919EE /* CNHValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44BC08119D08DB4004919EE /* CNHValidator.swift */; };
+		C49F28801A6DAD26007B2B1A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F287F1A6DAD26007B2B1A /* SignupViewController.swift */; };
+		C49F28841A6DAD9F007B2B1A /* CNHFloatLabeledTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F28831A6DAD9F007B2B1A /* CNHFloatLabeledTextFieldView.swift */; };
+		C49F28871A6DADDF007B2B1A /* CNHValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F28861A6DADDF007B2B1A /* CNHValidator.swift */; };
 		C4E57D9419CBAEC800F1C717 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E57D9319CBAEC800F1C717 /* AppDelegate.swift */; };
 		C4E57D9619CBAEC800F1C717 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E57D9519CBAEC800F1C717 /* RootViewController.swift */; };
 		C4E57D9B19CBAEC800F1C717 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4E57D9A19CBAEC800F1C717 /* Images.xcassets */; };
 		C4E57D9E19CBAEC800F1C717 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4E57D9C19CBAEC800F1C717 /* LaunchScreen.xib */; };
 		C4E57DAA19CBAEC900F1C717 /* FadeExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E57DA919CBAEC900F1C717 /* FadeExampleTests.swift */; };
-		C4E57DBF19CD193F00F1C717 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E57DBE19CD193F00F1C717 /* SignupViewController.swift */; };
 		C4E8206B19D47B9600E97A00 /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8206A19D47B9600E97A00 /* VerifyPhoneViewController.swift */; };
 		F7EA5DE7BDAA40BA8B982857 /* libPods-Cinch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6349B4404D464C9C72DB22 /* libPods-Cinch.a */; };
 /* End PBXBuildFile section */
@@ -32,8 +32,9 @@
 /* Begin PBXFileReference section */
 		19B70FBE0E50450583C10AC0 /* libPods-FadeExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FadeExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CA3EC1A3085B81612084BF /* Pods-Cinch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cinch/Pods-Cinch.debug.xcconfig"; sourceTree = "<group>"; };
-		C400AC2D19CF4C8B00A700F3 /* CNHFloatLabeledTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHFloatLabeledTextFieldView.swift; sourceTree = "<group>"; };
-		C44BC08119D08DB4004919EE /* CNHValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHValidator.swift; sourceTree = "<group>"; };
+		C49F287F1A6DAD26007B2B1A /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Features/Signup/Controllers/SignupViewController.swift; sourceTree = "<group>"; };
+		C49F28831A6DAD9F007B2B1A /* CNHFloatLabeledTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHFloatLabeledTextFieldView.swift; sourceTree = "<group>"; };
+		C49F28861A6DADDF007B2B1A /* CNHValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHValidator.swift; sourceTree = "<group>"; };
 		C4E57D8E19CBAEC800F1C717 /* Cinch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E57D9219CBAEC800F1C717 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4E57D9319CBAEC800F1C717 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		C4E57DB819CC7AC500F1C717 /* libPods-FadeExample-Masonry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-FadeExample-Masonry.a"; path = "Pods/build/Debug-iphoneos/libPods-FadeExample-Masonry.a"; sourceTree = "<group>"; };
 		C4E57DBA19CC7C2500F1C717 /* libPods-FadeExample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-FadeExample.a"; path = "Pods/build/Debug-iphoneos/libPods-FadeExample.a"; sourceTree = "<group>"; };
 		C4E57DBC19CC7C9800F1C717 /* libPods-FadeExample-Masonry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-FadeExample-Masonry.a"; path = "Pods/build/Debug-iphoneos/libPods-FadeExample-Masonry.a"; sourceTree = "<group>"; };
-		C4E57DBE19CD193F00F1C717 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		C4E8206A19D47B9600E97A00 /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyPhoneViewController.swift; sourceTree = "<group>"; };
 		DE6349B4404D464C9C72DB22 /* libPods-Cinch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cinch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E1B163DDE6B8D65C6DDEA1 /* Pods-Cinch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cinch/Pods-Cinch.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +97,55 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C49F287C1A6DAC98007B2B1A /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				C49F287D1A6DACA0007B2B1A /* Signup */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		C49F287D1A6DACA0007B2B1A /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				C49F287E1A6DACAC007B2B1A /* Controllers */,
+			);
+			name = Signup;
+			sourceTree = "<group>";
+		};
+		C49F287E1A6DACAC007B2B1A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C49F287F1A6DAD26007B2B1A /* SignupViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C49F28811A6DAD9F007B2B1A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C49F28851A6DADDF007B2B1A /* validators */,
+				C49F28821A6DAD9F007B2B1A /* views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C49F28821A6DAD9F007B2B1A /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C49F28831A6DAD9F007B2B1A /* CNHFloatLabeledTextFieldView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		C49F28851A6DADDF007B2B1A /* validators */ = {
+			isa = PBXGroup;
+			children = (
+				C49F28861A6DADDF007B2B1A /* CNHValidator.swift */,
+			);
+			path = validators;
+			sourceTree = "<group>";
+		};
 		C4E57D8519CBAEC800F1C717 = {
 			isa = PBXGroup;
 			children = (
@@ -120,12 +169,11 @@
 		C4E57D9019CBAEC800F1C717 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				C49F28811A6DAD9F007B2B1A /* Common */,
+				C49F287C1A6DAC98007B2B1A /* Features */,
 				C4E57D9319CBAEC800F1C717 /* AppDelegate.swift */,
-				C400AC2D19CF4C8B00A700F3 /* CNHFloatLabeledTextFieldView.swift */,
-				C44BC08119D08DB4004919EE /* CNHValidator.swift */,
 				C4E57DB319CC752A00F1C717 /* Onboarding-Bridging-Header.h */,
 				C4E57D9519CBAEC800F1C717 /* RootViewController.swift */,
-				C4E57DBE19CD193F00F1C717 /* SignupViewController.swift */,
 				C4E8206A19D47B9600E97A00 /* VerifyPhoneViewController.swift */,
 				C4E57D9A19CBAEC800F1C717 /* Images.xcassets */,
 				C4E57D9C19CBAEC800F1C717 /* LaunchScreen.xib */,
@@ -294,10 +342,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4E57DBF19CD193F00F1C717 /* SignupViewController.swift in Sources */,
-				C400AC2E19CF4C8B00A700F3 /* CNHFloatLabeledTextFieldView.swift in Sources */,
+				C49F28871A6DADDF007B2B1A /* CNHValidator.swift in Sources */,
+				C49F28801A6DAD26007B2B1A /* SignupViewController.swift in Sources */,
+				C49F28841A6DAD9F007B2B1A /* CNHFloatLabeledTextFieldView.swift in Sources */,
 				C4E57D9619CBAEC800F1C717 /* RootViewController.swift in Sources */,
-				C44BC08219D08DB4004919EE /* CNHValidator.swift in Sources */,
 				C4E8206B19D47B9600E97A00 /* VerifyPhoneViewController.swift in Sources */,
 				C4E57D9419CBAEC800F1C717 /* AppDelegate.swift in Sources */,
 			);

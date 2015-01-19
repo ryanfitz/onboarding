@@ -15,18 +15,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     let foregroundContentView : UIView = UIView()
     let foregroundContentScrollView : UIScrollView = UIScrollView()
     
-    let firstNameTextField : CNHFloatLabeledTextFieldView = CNHFloatLabeledTextFieldView(title: "First Name")
-    let lastNameTextField : CNHFloatLabeledTextFieldView = CNHFloatLabeledTextFieldView(title: "Last Name")
-    let emailTextField : CNHFloatLabeledTextFieldView = CNHFloatLabeledTextFieldView(title: "Email")
+    let emailTextField : CNHFloatLabeledTextFieldView = CNHFloatLabeledTextFieldView(title: "Email or Username")
     let passwordTextField : CNHFloatLabeledTextFieldView = CNHFloatLabeledTextFieldView(title: "Password")
     let textFields : [CNHFloatLabeledTextFieldView]
 
-    let signupButton : UIButton = UIButton.buttonWithType(.Custom) as UIButton
+    let loginButton : UIButton = UIButton.buttonWithType(.Custom) as UIButton
     let termsLabel : UILabel = UILabel()
     
     override init() {
         backgroundView = UIVisualEffectView(effect: blurEffect)
-        textFields = [firstNameTextField, lastNameTextField, emailTextField, passwordTextField]
+        textFields = [emailTextField, passwordTextField]
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -38,7 +36,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Sign Up"
+        title = "Login"
         if let navigationBar = self.navigationController?.navigationBar {
             navigationBar.translucent = true
             navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
@@ -52,18 +50,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: Selector("tappedClose:"))
         
-        signupButton.backgroundColor = UIColor(red: 19/255, green: 173/255, blue: 163/255, alpha: 1)
-        signupButton.setTitle("Create", forState: .Normal)
-        signupButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        signupButton.setTitleColor(UIColor.grayColor(), forState: .Highlighted)
-        signupButton.titleLabel?.font = UIFont.systemFontOfSize(14)
-        signupButton.layer.cornerRadius = 4
-        signupButton.contentEdgeInsets = UIEdgeInsetsMake(7, 8 , 7, 8)
-        signupButton.sizeToFit()
-        signupButton.addTarget(self, action: Selector("didTapSignup"), forControlEvents: UIControlEvents.TouchUpInside)
+        loginButton.backgroundColor = UIColor(red: 19/255, green: 173/255, blue: 163/255, alpha: 1)
+        loginButton.setTitle("Log in", forState: .Normal)
+        loginButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        loginButton.setTitleColor(UIColor.grayColor(), forState: .Highlighted)
+        loginButton.titleLabel?.font = UIFont.systemFontOfSize(14)
+        loginButton.layer.cornerRadius = 4
+        loginButton.contentEdgeInsets = UIEdgeInsetsMake(7, 8 , 7, 8)
+        loginButton.sizeToFit()
+        loginButton.addTarget(self, action: Selector("didTapLogin"), forControlEvents: UIControlEvents.TouchUpInside)
 
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: signupButton)
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: loginButton)
         
         view.addSubview(backgroundView)
         backgroundView.contentView.addSubview(foregroundContentScrollView)
@@ -79,22 +76,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             view.labeledTextField.delegate = self
             foregroundContentView.addSubview(view)
         }
-        
-        let termsText : String = "Terms of Use"
-        let privacyText : String = "Privacy Policy"
-        let termsAndPrivacyText : NSString = "By creating an account, you agree to Cinch's \(termsText) and \(privacyText)."
-    
-        var attribs : [NSObject : AnyObject] = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName : UIFont.systemFontOfSize(11)]
-        var attributedText : NSMutableAttributedString = NSMutableAttributedString(string: termsAndPrivacyText, attributes: attribs)
-        var highlightAttribs : [NSObject : AnyObject] = [NSForegroundColorAttributeName : UIColor(red: 19/255, green: 173/255, blue: 163/255, alpha: 1)]
-        
-        attributedText.setAttributes(highlightAttribs, range: termsAndPrivacyText.rangeOfString(termsText, options: .LiteralSearch))
-        attributedText.setAttributes(highlightAttribs, range: termsAndPrivacyText.rangeOfString(privacyText, options: .LiteralSearch))
-
-        termsLabel.attributedText = attributedText
-        termsLabel.numberOfLines = 0
-        termsLabel.lineBreakMode = .ByWordWrapping
-        termsLabel.font = UIFont.systemFontOfSize(11)
+//        
+//        let termsText : String = "Forgot password?"
+//        let termsAndPrivacyText : NSString = "\(termsText)"
+//    
+//        var attribs : [NSObject : AnyObject] = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName : UIFont.systemFontOfSize(11)]
+//        var attributedText : NSMutableAttributedString = NSMutableAttributedString(string: termsAndPrivacyText, attributes: attribs)
+//        var highlightAttribs : [NSObject : AnyObject] = [NSForegroundColorAttributeName : UIColor(red: 19/255, green: 173/255, blue: 163/255, alpha: 1)]
+//        
+//        attributedText.setAttributes(highlightAttribs, range: termsAndPrivacyText.rangeOfString(termsText, options: .LiteralSearch))
+//
+//        termsLabel.attributedText = attributedText
+//        termsLabel.numberOfLines = 0
+//        termsLabel.lineBreakMode = .ByWordWrapping
+//        termsLabel.font = UIFont.systemFontOfSize(11)
         foregroundContentView.addSubview(termsLabel)
         
         self.layoutSubviews()
@@ -102,7 +97,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardDidShow:"), name: UIKeyboardDidShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillBeHide:"), name: UIKeyboardWillHideNotification, object: nil)
         
-        firstNameTextField.becomeFirstResponder()
+        emailTextField.becomeFirstResponder()
     }
     
     deinit {
@@ -111,7 +106,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        firstNameTextField.becomeFirstResponder()
+        emailTextField.becomeFirstResponder()
     }
     
     func layoutSubviews() {
@@ -147,47 +142,31 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func generateTextFieldConstraints() {
-
-        firstNameTextField.mas_makeConstraints { (make) in
-            make.top.equalTo()(0)
-            make.top.equalTo()(self.lastNameTextField.mas_top)
+        
+        emailTextField.mas_makeConstraints { (make) in
+            make.top.equalTo()(self.foregroundContentView.mas_top)
             make.left.equalTo()(0)
-            make.right.equalTo()(self.lastNameTextField.mas_left).offset()(-10)
-            make.width.equalTo()(self.lastNameTextField.mas_width)
-            make.height.equalTo()(self.lastNameTextField.mas_height)
+            make.width.equalTo()(self.foregroundContentView.mas_width)
+            make.width.equalTo()(self.passwordTextField.mas_width)
+//            make.height.equalTo()(self.passwordTextField.mas_height)
             make.height.greaterThanOrEqualTo()(44)
 
             return ()
         }
         
-        lastNameTextField.mas_makeConstraints { (make) in
-            make.top.equalTo()(self.firstNameTextField.mas_top)
-            make.right.equalTo()(0)
-            make.left.equalTo()(self.firstNameTextField.mas_right).offset()(10)
-            make.width.equalTo()(self.firstNameTextField.mas_width)
-            make.height.equalTo()(self.firstNameTextField.mas_height)
+        passwordTextField.mas_makeConstraints { (make) in
+            make.top.equalTo()(self.emailTextField.mas_bottom).offset()(8)
+            make.left.equalTo()(0)
+            make.width.equalTo()(self.foregroundContentView.mas_width)
+            make.width.equalTo()(self.emailTextField.mas_width)
+//            make.height.equalTo()(self.emailTextField.mas_height)
             make.height.greaterThanOrEqualTo()(44)
             
             return ()
-        }
-
-        var lastView : UIView = lastNameTextField
-        
-        for view in [emailTextField, passwordTextField] {
-            view.mas_makeConstraints { (make) -> Void in
-                make.top.equalTo()(lastView.mas_bottom).offset()(8)
-                make.left.equalTo()(0)
-                make.width.equalTo()(self.foregroundContentView.mas_width)
-                make.height.greaterThanOrEqualTo()(44)
-                
-                return ()
-            }
-            
-            lastView = view
         }
         
         termsLabel.mas_makeConstraints { (make) -> Void in
-            make.top.equalTo()(lastView.mas_bottom).offset()(10)
+            make.top.equalTo()(self.passwordTextField.mas_bottom).offset()(10)
             make.left.equalTo()(0)
             make.width.equalTo()(self.foregroundContentView.mas_width)
             
@@ -297,8 +276,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: Actions
-    func didTapSignup() {
-        var vc : VerifyPhoneViewController = VerifyPhoneViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+    func didTapLogin() {
+       println("tapped login")
     }
 }

@@ -58,7 +58,7 @@ class CNHFloatLabeledTextFieldView: UIView {
         labeledTextField.tintColor = UIColor(red: 19/255, green: 173/255, blue: 163/255, alpha: 1)
         labeledTextField.autocapitalizationType = .Words
         labeledTextField.returnKeyType = .Next
-//        labeledTextField.placeholderYPadding = 10
+//        labeledTextField.placeholderYPadding = -30
 //        labeledTextField.floatingLabelYPadding = -12
         
         border.backgroundColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 0.5)

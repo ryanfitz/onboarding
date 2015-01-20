@@ -140,27 +140,30 @@
 		C49F28811A6DAD9F007B2B1A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C49F289E1A6DD06A007B2B1A /* Controllers */,
+				C49F28A41A6E112C007B2B1A /* Extensions */,
+				C49F28851A6DADDF007B2B1A /* Validators */,
+				C49F28821A6DAD9F007B2B1A /* Views */,
 				C49F28A11A6DF53C007B2B1A /* WireFrame */,
-				C49F289E1A6DD06A007B2B1A /* controllers */,
-				C49F28851A6DADDF007B2B1A /* validators */,
-				C49F28821A6DAD9F007B2B1A /* views */,
 			);
 			path = Common;
 			sourceTree = "<group>";
 		};
-		C49F28821A6DAD9F007B2B1A /* views */ = {
+		C49F28821A6DAD9F007B2B1A /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				C49F28831A6DAD9F007B2B1A /* CNHFloatLabeledTextFieldView.swift */,
 			);
+			name = Views;
 			path = views;
 			sourceTree = "<group>";
 		};
-		C49F28851A6DADDF007B2B1A /* validators */ = {
+		C49F28851A6DADDF007B2B1A /* Validators */ = {
 			isa = PBXGroup;
 			children = (
 				C49F28861A6DADDF007B2B1A /* CNHValidator.swift */,
 			);
+			name = Validators;
 			path = validators;
 			sourceTree = "<group>";
 		};
@@ -234,11 +237,12 @@
 			path = WireFrame;
 			sourceTree = "<group>";
 		};
-		C49F289E1A6DD06A007B2B1A /* controllers */ = {
+		C49F289E1A6DD06A007B2B1A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				C49F289F1A6DD0C3007B2B1A /* CNHTabBarController.swift */,
 			);
+			name = Controllers;
 			path = controllers;
 			sourceTree = "<group>";
 		};
@@ -248,6 +252,13 @@
 				C49F28A21A6DF55F007B2B1A /* CNHRootWireFrame.swift */,
 			);
 			name = WireFrame;
+			sourceTree = "<group>";
+		};
+		C49F28A41A6E112C007B2B1A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		C4E57D8519CBAEC800F1C717 = {

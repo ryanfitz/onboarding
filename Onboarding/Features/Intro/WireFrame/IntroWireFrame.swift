@@ -13,4 +13,9 @@ class IntroWireFrame {
         let vc : UIViewController = IntroViewController()
         window.rootViewController = vc
     }
+    
+    class func presentMainAppInterfaceFromWindow(window : UIWindow) {
+        let vc : UIViewController = CNHTabBarController()
+        window.rootViewController = vc
+    }
 }

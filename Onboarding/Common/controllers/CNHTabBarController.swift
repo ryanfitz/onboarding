@@ -9,13 +9,14 @@
 import Foundation
 
 class CNHTabBarController : UITabBarController {
+    let greenBackground = UIView()
     
     override func viewDidLoad() {
         let vc1 = UINavigationController(rootViewController: UIViewController())
         vc1.navigationBar.barStyle = .Default
         vc1.navigationBar.barTintColor = UIColor(red: 19/255.0, green: 173/255.0, blue: 163/255.0, alpha: 1)
         vc1.navigationBar.translucent = false
-//        let vc1 = UIViewController();
+        
         let vc2 = UIViewController();
         let vc3 = UIViewController();
         let vc4 = UIViewController();
@@ -31,7 +32,7 @@ class CNHTabBarController : UITabBarController {
         let controllers : [UIViewController] = [vc1, vc2, vc3, vc4, vc5]
         for vc in controllers {
            vc.view.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
-           vc.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+           vc.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
         }
         
         self.viewControllers = controllers
@@ -40,18 +41,22 @@ class CNHTabBarController : UITabBarController {
         self.tabBar.tintColor = UIColor.whiteColor()
         self.tabBar.backgroundColor = UIColor.blackColor()
         self.tabBar.translucent = false
-        
-        let itemIndex : CGFloat = 2
-        let bgColor = UIColor(red: 19/255.0, green: 173/255.0, blue: 163/255.0, alpha: 1)
-        
-        let itemWidth : CGFloat = tabBar.frame.width / CGFloat(tabBar.items!.count)
-        let bgView = UIView(frame: CGRectMake((itemWidth * itemIndex) + 2, 3, itemWidth - 4, tabBar.frame.height - 6))
-        bgView.layer.cornerRadius = 8.0
-        bgView.backgroundColor = bgColor
-        tabBar.insertSubview(bgView, atIndex: 0)
+
+        greenBackground.layer.cornerRadius = 8.0
+        greenBackground.backgroundColor = UIColor(red: 19/255.0, green: 173/255.0, blue: 163/255.0, alpha: 1)
+        tabBar.insertSubview(greenBackground, atIndex: 0)
         
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState:.Normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.redColor()], forState:.Selected)
     }
+    
+    override func viewWillLayoutSubviews() {
+        let itemIndex : CGFloat = 2
+        let w = CGRectGetWidth(tabBar.frame)
+        let itemWidth : CGFloat = w / CGFloat(tabBar.items!.count)
+        
+        greenBackground.frame = CGRectMake((itemWidth * itemIndex) + 2, 3, itemWidth - 4, tabBar.frame.height - 6)
+    }
+    
     
 }

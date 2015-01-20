@@ -293,12 +293,28 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
+        if(textField == passwordTextField.labeledTextField) {
+            self.attempSignup()
+        }
+        
         return false
     }
     
     // MARK: Actions
     func didTapSignup() {
-        var vc : VerifyPhoneViewController = VerifyPhoneViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+//        var vc : VerifyPhoneViewController = VerifyPhoneViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
+        self.attempSignup()
+    }
+    
+    func attempSignup() {
+        println("attempt signup")
+        self.view.endEditing(true)
+        
+        if let win = UIApplication.sharedApplication().delegate?.window! {
+            let vc = CNHTabBarController()
+            self.dismissViewControllerAnimated(true, completion:nil)
+            CNHRootWireFrame.showRootViewController(vc, inWindow: win)
+        }
     }
 }

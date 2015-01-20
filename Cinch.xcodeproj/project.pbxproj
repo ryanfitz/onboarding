@@ -17,6 +17,7 @@
 		C49F289B1A6DB9DF007B2B1A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F28971A6DB9DF007B2B1A /* LoginViewController.swift */; };
 		C49F289D1A6DB9DF007B2B1A /* LoginWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F289A1A6DB9DF007B2B1A /* LoginWireFrame.swift */; };
 		C49F28A01A6DD0C3007B2B1A /* CNHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F289F1A6DD0C3007B2B1A /* CNHTabBarController.swift */; };
+		C49F28A31A6DF55F007B2B1A /* CNHRootWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F28A21A6DF55F007B2B1A /* CNHRootWireFrame.swift */; };
 		C4E57D9419CBAEC800F1C717 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E57D9319CBAEC800F1C717 /* AppDelegate.swift */; };
 		C4E57D9B19CBAEC800F1C717 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4E57D9A19CBAEC800F1C717 /* Images.xcassets */; };
 		C4E57D9E19CBAEC800F1C717 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4E57D9C19CBAEC800F1C717 /* LaunchScreen.xib */; };
@@ -47,6 +48,7 @@
 		C49F28971A6DB9DF007B2B1A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C49F289A1A6DB9DF007B2B1A /* LoginWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWireFrame.swift; sourceTree = "<group>"; };
 		C49F289F1A6DD0C3007B2B1A /* CNHTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHTabBarController.swift; sourceTree = "<group>"; };
+		C49F28A21A6DF55F007B2B1A /* CNHRootWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CNHRootWireFrame.swift; path = WireFrame/CNHRootWireFrame.swift; sourceTree = "<group>"; };
 		C4E57D8E19CBAEC800F1C717 /* Cinch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E57D9219CBAEC800F1C717 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4E57D9319CBAEC800F1C717 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		C49F28811A6DAD9F007B2B1A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C49F28A11A6DF53C007B2B1A /* WireFrame */,
 				C49F289E1A6DD06A007B2B1A /* controllers */,
 				C49F28851A6DADDF007B2B1A /* validators */,
 				C49F28821A6DAD9F007B2B1A /* views */,
@@ -237,6 +240,14 @@
 				C49F289F1A6DD0C3007B2B1A /* CNHTabBarController.swift */,
 			);
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		C49F28A11A6DF53C007B2B1A /* WireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				C49F28A21A6DF55F007B2B1A /* CNHRootWireFrame.swift */,
+			);
+			name = WireFrame;
 			sourceTree = "<group>";
 		};
 		C4E57D8519CBAEC800F1C717 = {
@@ -440,6 +451,7 @@
 				C49F28911A6DB2E8007B2B1A /* IntroWireFrame.swift in Sources */,
 				C49F288E1A6DB00F007B2B1A /* IntroViewController.swift in Sources */,
 				C49F289D1A6DB9DF007B2B1A /* LoginWireFrame.swift in Sources */,
+				C49F28A31A6DF55F007B2B1A /* CNHRootWireFrame.swift in Sources */,
 				C49F28841A6DAD9F007B2B1A /* CNHFloatLabeledTextFieldView.swift in Sources */,
 				C49F288A1A6DAF62007B2B1A /* VerifyPhoneViewController.swift in Sources */,
 				C4E57D9419CBAEC800F1C717 /* AppDelegate.swift in Sources */,

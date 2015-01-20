@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let win = window {
             win.makeKeyAndVisible()
-//            IntroWireFrame.presentIntroInterfaceFromWindow(win)
-            IntroWireFrame.presentMainAppInterfaceFromWindow(win)
+            IntroWireFrame.presentIntroInterfaceFromWindow(win)
+//            IntroWireFrame.presentMainAppInterfaceFromWindow(win)
         }
         
         return true

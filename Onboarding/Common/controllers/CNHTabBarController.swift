@@ -17,7 +17,7 @@ class CNHTabBarController : UITabBarController {
         let vc4 = UIViewController();
         let vc5 = UIViewController();
         
-        var createPollImage : UIImage = UIImage(named:"explore-off")!.imageWithRenderingMode(.AlwaysOriginal)
+        var createPollImage : UIImage = UIImage(named:"createpoll-add")!.imageWithRenderingMode(.AlwaysOriginal)
         vc1.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "home-off"), tag: 1)
         vc2.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "explore-off"), tag: 2)
         vc3.tabBarItem = UITabBarItem(title: nil, image: createPollImage, tag: 3)

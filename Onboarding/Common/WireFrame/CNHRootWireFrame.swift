@@ -15,4 +15,12 @@ class CNHRootWireFrame {
         }, completion: { (fininshed: Bool) -> () in
         })
     }
+    
+    class func presentTabBarControlller(fromViewController : UIViewController) {
+        let vc = CNHTabBarController()
+        vc.modalPresentationStyle = .OverCurrentContext
+        vc.modalTransitionStyle = .CrossDissolve
+        
+        fromViewController.presentViewController(vc, animated: true, completion: nil)
+    }
 }

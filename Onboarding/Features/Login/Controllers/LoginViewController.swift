@@ -288,11 +288,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func attempLogin() {
         println("attempt login")
         self.view.endEditing(true)
-        
-        if let win = UIApplication.sharedApplication().delegate?.window! {
-            let vc = CNHTabBarController()
-            self.dismissViewControllerAnimated(true, completion:nil)
-            CNHRootWireFrame.showRootViewController(vc, inWindow: win)
-        }
+        CNHRootWireFrame.presentTabBarControlller(self)
     }
 }

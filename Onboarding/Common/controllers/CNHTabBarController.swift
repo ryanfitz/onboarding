@@ -21,8 +21,8 @@ class CNHTabBarController : UITabBarController {
         vc1.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "home-off"), tag: 1)
         vc2.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "explore-off"), tag: 2)
         vc3.tabBarItem = UITabBarItem(title: nil, image: createPollImage, tag: 3)
-        vc4.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "explore-off"), tag: 4)
-        vc5.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "explore-off"), tag: 5)
+        vc4.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "nofitication"), tag: 4)
+        vc5.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "profile"), tag: 5)
         
         let controllers : [UIViewController] = [vc1, vc2, vc3, vc4, vc5]
         for vc in controllers {

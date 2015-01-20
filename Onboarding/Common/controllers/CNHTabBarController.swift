@@ -13,14 +13,13 @@ class CNHTabBarController : UITabBarController {
     override func viewDidLoad() {
         let vc1 = UINavigationController(rootViewController: UIViewController())
         vc1.navigationBar.barStyle = .Default
-        vc1.navigationBar.barTintColor = UIColor(red: 19/255, green: 173/255, blue: 163/255, alpha: 1)
+        vc1.navigationBar.barTintColor = UIColor(red: 19/255.0, green: 173/255.0, blue: 163/255.0, alpha: 1)
         vc1.navigationBar.translucent = false
 //        let vc1 = UIViewController();
         let vc2 = UIViewController();
         let vc3 = UIViewController();
         let vc4 = UIViewController();
         let vc5 = UIViewController();
-        
         
         var createPollImage : UIImage = UIImage(named:"createpoll-add")!.imageWithRenderingMode(.AlwaysOriginal)
         vc1.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "home-off"), tag: 1)
@@ -43,7 +42,7 @@ class CNHTabBarController : UITabBarController {
         self.tabBar.translucent = false
         
         let itemIndex : CGFloat = 2
-        let bgColor = UIColor(red: 19/255, green: 173/255, blue: 163/255, alpha: 1)
+        let bgColor = UIColor(red: 19/255.0, green: 173/255.0, blue: 163/255.0, alpha: 1)
         
         let itemWidth : CGFloat = tabBar.frame.width / CGFloat(tabBar.items!.count)
         let bgView = UIView(frame: CGRectMake((itemWidth * itemIndex) + 2, 3, itemWidth - 4, tabBar.frame.height - 6))
